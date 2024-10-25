@@ -1,6 +1,6 @@
 package main
 
-/* import (
+import (
 	"fmt"
 	"net/http"
 	"os"
@@ -17,16 +17,16 @@ func createJWT(account *Account) (string, error) {
 	secret := os.Getenv("JWT_SECRET")
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 
-	return token.SignedString([]byte(secret)) } 
-/*
+	return token.SignedString([]byte(secret))
+}
 
 func permissionDenied(w http.ResponseWriter) {
 	WriteJSON(w, http.StatusForbidden, ApiError{Error: "permission denied"})
-} */
+}
 
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50TnVtYmVyIjo0OTgwODEsImV4cGlyZXNBdCI6MTUwMDB9.TdQ907o9yhUI2KU0TngrqO-xbfNgHAfZI6Jngia15UE
 
-/* func _withJWTAuth(handlerFunc http.HandlerFunc, s Storage) http.HandlerFunc {
+func withJWTAuth(handlerFunc http.HandlerFunc, s Storage) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("calling JWT auth middleware")
 
@@ -58,9 +58,9 @@ func permissionDenied(w http.ResponseWriter) {
 		}
 		handlerFunc(w, r)
 	}
-} */
+}
 
-/* func validateJWT(tokenString string) (*jwt.Token, error) {
+func validateJWT(tokenString string) (*jwt.Token, error) {
 	secret := os.Getenv("JWT_SECRET")
 
 	return jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
@@ -72,4 +72,4 @@ func permissionDenied(w http.ResponseWriter) {
 		// hmacSampleSecret is a []byte containing your secret, e.g. []byte("my_secret_key")
 		return []byte(secret), nil
 	})
-} */
+}

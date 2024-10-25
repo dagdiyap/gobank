@@ -9,7 +9,7 @@ import (
 	
 )
 
-/* func (s *APIServer) handleLogin(w http.ResponseWriter, r *http.Request) error {
+func (s *APIServer) handleLogin(w http.ResponseWriter, r *http.Request) error {
 	if r.Method != "POST" {
 		return fmt.Errorf("method not allowed %s", r.Method)
 	}
@@ -39,7 +39,7 @@ import (
 	}
 
 	return WriteJSON(w, http.StatusOK, resp)
-} */
+}
 
 func (s *APIServer) handleAccount(w http.ResponseWriter, r *http.Request) error {
 	if r.Method == "GET" {
